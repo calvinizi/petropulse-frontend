@@ -1,0 +1,138 @@
+
+.mobile-nav-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #0f172a;
+  color: white;
+}
+
+
+.mobile-nav-header {
+  padding: 1.5rem;
+
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-logo-box {
+  width: 40px; height: 40px;
+  background: #2563eb;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+}
+
+.mobile-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+
+.mobile-nav-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.mobile-group-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  color: #94a3b8;
+}
+
+.mobile-nav-item:active {
+  transform: scale(0.98);
+}
+
+
+.icon-box {
+  width: 36px; height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-right: 12px;
+  color: #94a3b8;
+  transition: all 0.2s;
+}
+
+.link-text {
+  font-weight: 600;
+  font-size: 1rem;
+  flex: 1; 
+}
+
+.arrow-icon {
+  color: #475569;
+}
+
+
+.mobile-nav-item.active {
+  background-color: rgba(37, 99, 235, 0.15); 
+  color: #60a5fa;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+.mobile-nav-item.active .icon-box {
+  background-color: #2563eb;
+  color: white;
+}
+
+.mobile-nav-item.active .arrow-icon {
+  color: #60a5fa;
+}
+
+
+.mobile-nav-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #0f172a; 
+}
+
+.mobile-logout-btn {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 10px;
+  color: #ef4444;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mobile-logout-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}

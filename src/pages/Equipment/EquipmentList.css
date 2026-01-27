@@ -1,0 +1,168 @@
+.equipment-list-container {
+  padding: 1.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.equipment-table-container {
+
+  overflow: hidden; 
+  margin-bottom: 1rem;
+  display: block;                      
+  width: 100%;
+  border-radius: 12px;
+}
+
+.equipment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+
+.equipment-table th, 
+.equipment-table td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle; 
+  color: var(--text-main);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+
+.equipment-table th {
+  background-color: var(--bg-main);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+html.dark .equipment-table th {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+html.dark .equipment-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+.equipment-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+
+.equipment-table tr:last-child td {
+  border-bottom: none;
+}
+
+
+html.dark #equipment-search {
+  background-color: var(--bg-main); 
+  color: var(--text-main);            
+  border-color: var(--border);     
+}
+
+html.dark #equipment-search::placeholder {
+  color: var(--text-muted);            
+}
+
+html.dark #equipment-search:focus {
+  border-color: var(--primary);  
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.icon-badgeOperational { background: #d1fae5; color: #059669; }
+.icon-badgeCritical { background: #fee2e2; color: #e11d48; }
+.icon-badgeblue { background: #dbeafe; color: #2563eb; }
+.icon-badgeMaintenance { background: #ffedd5; color: #d97706; }
+
+html.dark .icon-badgeOperational {
+  background: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+}
+
+html.dark .icon-badgeCritical {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+}
+
+html.dark .icon-badgeblue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+}
+
+html.dark .icon-badgeMaintenance {
+  background: rgba(251, 146, 60, 0.15);
+  color: #fdba74;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1180px) {
+  .animate-fade-in {
+    padding: 1rem;
+  }
+
+
+  .flex-row {
+    display: flex;
+  }
+
+  html.dark .flex-row {
+    background-color: transparent;
+  }
+
+  .equipment-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+  }
+
+  .equipment-table {
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .equipment-table th,
+  .equipment-table td {
+    padding: 0.75rem 1rem;
+    white-space: nowrap; 
+  }
+}
+
+@media (max-width: 640px) {
+  .equipment-list-container {
+    padding: 1rem;
+  }
+  
+  
+  .equipment-table th, 
+  .equipment-table td {
+    padding: 0.75rem 1rem;
+  }
+  
+  .equipment-table-container {
+    overflow-x: auto;
+  }
+}

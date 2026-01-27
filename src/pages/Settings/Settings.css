@@ -1,0 +1,623 @@
+.settings-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.settings-layout {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.settings-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.settings-nav-item:hover:not(.disabled) {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+html.dark .settings-nav-item:hover:not(.disabled) {
+  background-color: #334155;
+}
+
+.settings-nav-item.active {
+  background-color: #eff6ff; 
+  color: #2563eb; 
+  font-weight: 600;
+}
+
+html.dark .settings-nav-item.active {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.settings-content {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  overflow-y: auto;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+html.dark .settings-content {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.tab-header h3 { 
+  margin: 0; 
+  color: var(--text-main); 
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.tab-header p { 
+  margin: 4px 0 0 0; 
+  color: var(--text-muted); 
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.search-bar-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.sites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.site-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  min-height: 200px;
+}
+
+.site-card:hover {
+  border-color: var(--text-muted);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+html.dark .site-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.site-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.site-icon {
+  width: 40px; 
+  height: 40px;
+  background: #f0f9ff;
+  color: #0284c7;
+  border-radius: 8px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+html.dark .site-icon {
+  background: rgba(2, 132, 199, 0.2);
+  color: #38bdf8;
+}
+
+.site-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.site-name {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.site-name.clickable {
+  cursor: pointer;
+}
+
+.site-name.clickable:hover {
+  color: var(--primary);
+}
+
+.site-type {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.site-details {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-main);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.detail-row-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.count-badge {
+  background: var(--bg-main);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon-action {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.icon-action:hover { color: var(--text-main); }
+.icon-action.view:hover { color: var(--primary); }
+.icon-action.edit:hover { color: var(--warning); }
+.icon-action.delete:hover { color: var(--danger); }
+
+.users-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.user-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: var(--text-muted);
+}
+
+html.dark .user-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.user-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-avatar-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--text-muted);
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+html.dark .user-avatar-circle {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.user-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-role-badge {
+  background-color: #eff6ff;
+  color: #2563eb;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark .user-role-badge {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+.user-email {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.role-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.role-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+html.dark .role-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.role-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.role-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.role-icon {
+  color: #2563eb;
+  padding: 6px;
+  background-color: #eff6ff;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark .role-icon {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.role-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.role-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: auto;
+}
+
+.role-features li {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.role-features li::before {
+  content: "•";
+  color: var(--primary);
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.role-card.admin { border-top: 4px solid #2563eb; }
+.role-card.supervisor { border-top: 4px solid #059669; }
+.role-card.technician { border-top: 4px solid #d97706; }
+.role-card.viewer { border-top: 4px solid #64748b; }
+
+html.dark .role-card.admin { border-top-color: #60a5fa; }
+html.dark .role-card.supervisor { border-top-color: #34d399; }
+html.dark .role-card.technician { border-top-color: #fbbf24; }
+html.dark .role-card.viewer { border-top-color: #94a3b8; }
+
+.placeholder-box {
+  padding: 3rem;
+  text-align: center;
+  background: var(--bg-main);
+  border: 2px dashed var(--border);
+  color: var(--text-muted);
+  border-radius: 8px;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem 1rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notification-card:hover {
+  background-color: var(--bg-main);
+  border-color: var(--text-muted);
+}
+
+html.dark .notification-card:hover {
+  background-color: #334155;
+}
+
+.notification-card.unread {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+html.dark .notification-card.unread {
+  background-color: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.unread-dot {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--bg-card);
+  transition: box-shadow 0.3s ease;
+}
+
+.notification-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.notification-card.unread .notification-icon {
+  color: var(--primary);
+}
+
+.notification-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notif-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-main);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.notif-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.notif-snippet {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+.notification-card.unread .notif-snippet {
+  font-weight: 500;
+}
+
+.notification-arrow {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+/* Notification Details in Modal */
+.notif-detail-view {
+  padding: 1rem 0;
+}
+
+.notif-detail-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.notif-detail-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-main);
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.notif-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.notif-detail-body p {
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.notif-type-badge {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.notif-type-badge.warning { background: #fef3c7; color: #b45309; }
+.notif-type-badge.alert { background: #fee2e2; color: #b91c1c; }
+.notif-type-badge.info { background: #dbeafe; color: #1e40af; }
+.notif-type-badge.success { background: #dcfce7; color: #15803d; }
+
+html.dark .notif-type-badge.warning { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+html.dark .notif-type-badge.alert { background: rgba(244, 63, 94, 0.2); color: #fb7185; }
+html.dark .notif-type-badge.info { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+html.dark .notif-type-badge.success { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+
+@media (max-width: 768px) {
+  .settings-layout {
+    flex-direction: column;
+  }
+  .settings-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+}

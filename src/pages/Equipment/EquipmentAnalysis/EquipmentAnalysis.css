@@ -1,0 +1,288 @@
+.analysis-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.summary-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-main);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+  background: var(--bg-hover);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.filter-btn.active[style*="--filter-color"] {
+  background: var(--filter-color);
+  border-color: var(--filter-color);
+}
+
+.equipment-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.equipment-analysis-card {
+  position: relative;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.equipment-analysis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+html.dark .equipment-analysis-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.risk-badge-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 8px;
+  color: white;
+}
+
+.risk-score {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.equipment-card-header {
+  margin-bottom: 1rem;
+  padding-right: 80px;
+}
+
+.equipment-card-header h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.equipment-tag {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.risk-level-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.risk-factors-mini {
+  margin-bottom: 1rem;
+}
+
+.risk-factors-mini h4 {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.factor-mini {
+  display: grid;
+  grid-template-columns: 150px 1fr 50px;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.factor-mini-label {
+  font-size: 0.8rem;
+  color: var(--text-main);
+  text-transform: capitalize;
+}
+
+.factor-mini-bar {
+  height: 6px;
+  background: var(--bg-main);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.factor-mini-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 3px;
+}
+
+.factor-mini-value {
+  text-align: right;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.top-recommendation {
+  padding: 0.75rem;
+  background: var(--bg-main);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.recommendation-priority {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.recommendation-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.card-footer {
+  text-align: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}
+
+.no-results p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.analysis-info {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.analysis-info p {
+  margin: 0.25rem 0;
+  color: var(--text-main);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .analysis-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .equipment-analysis-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .factor-mini {
+    grid-template-columns: 120px 1fr 45px;
+  }
+}
+
+@media (max-width: 640px) {
+  .analysis-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .equipment-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+  }
+
+  .filter-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .factor-mini {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .factor-mini-value {
+    text-align: left;
+  }
+
+  .equipment-card-header {
+    padding-right: 60px;
+  }
+
+  .risk-badge-corner {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .risk-score {
+    font-size: 1rem;
+  }
+}
