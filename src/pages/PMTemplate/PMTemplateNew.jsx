@@ -154,7 +154,12 @@ const PMTemplateNew = () => {
             <label className="form-label">Applies To Equipment</label>
             
             <div className="equipment-selection-box">
-                <label className={`equipment-option all-option ${selectedEquipment?.includes('All Equipment') ? 'selected' : ''}`}>
+              {equipmentData.length === 0 ? 
+                <p className="no-equipment-text">No equipment available.</p> 
+
+                :
+                <>
+                  <label className={`equipment-option all-option ${selectedEquipment?.includes('All Equipment') ? 'selected' : ''}`}>
                     <input 
                         type="checkbox" 
                         value="All Equipment"
@@ -193,6 +198,9 @@ const PMTemplateNew = () => {
                         );
                     })}
                 </div>
+                </>
+                }
+                
             </div>
             
             <input 
