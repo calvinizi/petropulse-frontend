@@ -96,7 +96,7 @@ const Profile = () => {
     }
 
     await sendRequest(
-      `http://localhost:5001/api/user/${currentUser.id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/user/${currentUser.id}`,
       'PUT',
       formData,
       {
