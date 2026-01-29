@@ -1,3 +1,4 @@
+
 .mobile-nav-container {
   display: flex;
   flex-direction: column;
@@ -5,27 +6,25 @@
   max-height: 100vh;
   background-color: #0f172a;
   color: white;
-  overflow: hidden;
+  overflow: hidden; 
 }
+
 
 .mobile-nav-header {
   padding: 1.5rem;
+
   background: linear-gradient(to right, #0f172a, #1e293b);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
 }
 
 .mobile-logo-box {
-  width: 40px;
-  height: 40px;
+  width: 40px; height: 40px;
   background: #2563eb;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
 }
 
@@ -41,11 +40,18 @@
   letter-spacing: -0.5px;
 }
 
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+
 .mobile-nav-links {
   flex: 1;
   overflow-y: auto;
   padding: 1.5rem;
-  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); /* Safe area for iOS */
+  padding-bottom: 0; 
   -webkit-overflow-scrolling: touch;
 }
 
@@ -58,6 +64,7 @@
   margin-bottom: 0.75rem;
 }
 
+
 .mobile-nav-item {
   display: flex;
   align-items: center;
@@ -67,47 +74,36 @@
   border-radius: 12px;
   transition: all 0.2s ease;
   color: #94a3b8;
-  background: transparent;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1rem;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-nav-item:active {
   transform: scale(0.98);
 }
 
+
 .icon-box {
-  width: 36px;
-  height: 36px;
+  width: 36px; height: 36px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   margin-right: 12px;
   color: #94a3b8;
   transition: all 0.2s;
-  flex-shrink: 0;
 }
 
 .link-text {
   font-weight: 600;
   font-size: 1rem;
-  flex: 1;
-  text-align: left;
+  flex: 1; 
 }
 
 .arrow-icon {
   color: #475569;
-  flex-shrink: 0;
 }
 
+
 .mobile-nav-item.active {
-  background-color: rgba(37, 99, 235, 0.15);
+  background-color: rgba(37, 99, 235, 0.15); 
   color: #60a5fa;
   border: 1px solid rgba(37, 99, 235, 0.3);
 }
@@ -121,28 +117,86 @@
   color: #60a5fa;
 }
 
-/* LOGOUT BUTTON STYLING */
-.logout-item {
-  background: rgba(239, 68, 68, 0.1);
+
+.mobile-nav-footer {
+  padding: 1rem 1.5rem;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #0f172a;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.mobile-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mobile-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.mobile-user-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobile-user-role {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mobile-logout-btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.15);
+  border-radius: 50%;
   color: #ef4444;
-  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.logout-item:active {
-  background: rgba(239, 68, 68, 0.2);
-  transform: scale(0.98);
-}
-
-.logout-icon-box {
-  background: rgba(239, 68, 68, 0.2) !important;
-  color: #ef4444 !important;
-}
-
-.logout-item .arrow-icon {
-  color: #ef4444;
-}
-
-.logout-item .link-text {
-  color: #ef4444;
+.mobile-logout-btn:active {
+  background: rgba(239, 68, 68, 0.3);
+  transform: scale(0.95);
 }

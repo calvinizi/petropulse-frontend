@@ -6,14 +6,12 @@ import {
 } from 'lucide-react';
 import './MobileNav.css';
 import { useLogin } from '../../context/AuthContext';
+import { useCurrentUser } from '../../hooks/useCurrentUser';
 
 const MobileNav = (props) => {
-  const { logout, role } = useLogin();
   
-  const handleLogout = () => {
-    props.onClose(); 
-    logout(); 
-  };
+  const { logout, role } = useLogin();
+  const { currentUser } = useCurrentUser()
 
   const getLinkClass = ({ isActive }) => {
     return `mobile-nav-item ${isActive ? 'active' : ''}`;
@@ -21,6 +19,7 @@ const MobileNav = (props) => {
 
   return (
     <div className="mobile-nav-container">
+      
       <div className="mobile-nav-header">
         <div className="mobile-logo-box">
           <Activity size={24} color="white" />
@@ -65,6 +64,7 @@ const MobileNav = (props) => {
           <ChevronRight size={16} className="arrow-icon" />
         </NavLink>
 
+        
         {role === 'Admin' && (
           <NavLink to="/audit-logs" className={getLinkClass} onClick={props.onClose}>
             <div className="icon-box"><Shield size={20} /></div>
@@ -84,17 +84,26 @@ const MobileNav = (props) => {
           <span className="link-text">My Profile</span>
           <ChevronRight size={16} className="arrow-icon" />
         </NavLink>
-
-        <div className="mobile-group-label" style={{marginTop: '1.5rem'}}>Account</div>
-        
-        <button onClick={handleLogout} className="mobile-nav-item logout-item" type="button">
-          <div className="icon-box logout-icon-box">
-            <LogOut size={20} />
-          </div>
-          <span className="link-text">Sign Out</span>
-          <ChevronRight size={16} className="arrow-icon" />
-        </button>
       </div>
+      
+      <div className="mobile-nav-footer">
+        <div className="mobile-user-info">
+          <div className="mobile-user-avatar">
+            {currentUser?.avatar ? (
+              <img src={`${currentUser?.avatar}`} alt={currentUser?.name} />
+            ) : (
+              <User size={20} />
+            )}
+          </div>
+          <div className="mobile-user-details">
+            <span className="mobile-user-name">{currentUser?.name || 'User'}</span>
+            <span className="mobile-user-role">{role}</span>
+          </div>
+        </div>
+        <button onClick={logout} className="mobile-logout-btn" type="button">
+          <LogOut size={20} />
+        </button>
+      </div>    
     </div>
   );
 };
