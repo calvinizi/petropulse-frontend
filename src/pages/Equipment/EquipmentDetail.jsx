@@ -445,7 +445,7 @@ const EquipmentDetail = () => {
                   <label>Current Running Hours</label>
                   <div style={{display:'flex', alignItems:'center', gap:'8px', fontSize:'1.1rem', fontWeight:'600'}}>
                     <Clock size={18} className="text-blue-600"/>
-                    {equipment.runningHours || 0} hrs
+                    {equipment.runningHours || 0} {equipment.runningHours === 1 ? 'hr': 'hrs'}
                   </div>
                 </div>
                 
@@ -455,7 +455,7 @@ const EquipmentDetail = () => {
                     <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
                       <CheckCircle size={16} className="text-emerald-600"/>
                       <span style={{fontWeight:'500'}}>
-                        {equipment.lastMaintenanceHours || 0} hrs ago
+                        {equipment.lastMaintenanceHours || 0} {equipment.lastMaintenanceHours === 1 ? 'hr ago' : 'hrs ago'} 
                       </span>
                     </div>
                   </div>
