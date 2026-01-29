@@ -138,7 +138,7 @@ const PMTemplateDetail = () => {
                     <div key={item.id} className="linked-asset-row" onClick={() => navigate(`/equipment/${item.id}`)}>
                         <div className="asset-icon-box">
                             <img 
-                              src={`${process.env.REACT_APP_ASSET_URL}/${item.photo}`} 
+                              src={`${item.photo}`} 
                               alt={<Box size={18} />} 
                               style={{
                                 objectFit:"cover",

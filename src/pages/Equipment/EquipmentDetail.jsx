@@ -579,7 +579,7 @@ const EquipmentDetail = () => {
               <h3>Asset Photo</h3>
               <div className="asset-image-placeholder">
                 <img 
-                  src={`${process.env.REACT_APP_ASSET_URL}/${equipment?.photo}` || "https://placehold.co/400x300?text=No+Image"} 
+                  src={`${equipment.photo}` || "https://placehold.co/400x300?text=No+Image"} 
                   alt="Asset" 
                   style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'8px'}} 
                 />

@@ -248,7 +248,7 @@ const Settings = () => {
             <div className="user-card-top">
                 <div className="user-avatar-circle">
                     {user.avatar ? (
-                        <img src={`${process.env.REACT_APP_ASSET_URL}/${user.avatar}`} alt={user.name} />
+                        <img src={`${user.avatar}`} alt={user.name} />
                     ) : (
                         <User size={24} />
                     )}

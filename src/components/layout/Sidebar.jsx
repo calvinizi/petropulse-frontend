@@ -85,7 +85,7 @@ const Sidebar = (props) => {
         <div style={{ width: '36px', height: '36px', background: '#1e293b', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#93c5fd', fontWeight: 'bold' }}>
           {isLoading ? '...' : (
             <img 
-              src={currentUser?.avatar ? `${process.env.REACT_APP_ASSET_URL}/${currentUser.avatar}` : ''} 
+              src={currentUser?.avatar ? currentUser.avatar : ''} 
               alt={currentUser?.name?.charAt(0).toUpperCase()} 
               style={{
                 objectFit:"cover",

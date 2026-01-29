@@ -6,10 +6,12 @@ import {
 } from 'lucide-react';
 import './MobileNav.css';
 import { useLogin } from '../../context/AuthContext';
+import { useCurrentUser } from '../../hooks/useCurrentUser';
 
 const MobileNav = (props) => {
   
   const { logout, role } = useLogin();
+  const { currentUser } = useCurrentUser()
 
   const getLinkClass = ({ isActive }) => {
     return `mobile-nav-item ${isActive ? 'active' : ''}`;
@@ -85,11 +87,23 @@ const MobileNav = (props) => {
       </div>
       
       <div className="mobile-nav-footer">
-        <button onClick={logout} className="mobile-logout-btn">
-          <LogOut size={18} />
-          <span>Sign Out</span>
+        <div className="mobile-user-info">
+          <div className="mobile-user-avatar">
+            {currentUser?.avatar ? (
+              <img src={`${currentUser?.avatar}`} alt={currentUser?.name} />
+            ) : (
+              <User size={20} />
+            )}
+          </div>
+          <div className="mobile-user-details">
+            <span className="mobile-user-name">{currentUser?.name || 'User'}</span>
+            <span className="mobile-user-role">{role}</span>
+          </div>
+        </div>
+        <button onClick={logout} className="mobile-logout-btn" type="button">
+          <LogOut size={20} />
         </button>
-      </div>
+      </div>    
     </div>
   );
 };

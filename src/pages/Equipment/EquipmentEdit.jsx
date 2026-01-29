@@ -451,7 +451,7 @@ const EquipmentEdit = () => {
                 <ImageUpload
                   id="equipmentImage"
                   onChange={onChange}
-                  value={value || (loadedEquipment?.photo ? `${process.env.REACT_APP_ASSET_URL}/${loadedEquipment.photo}` : null)}
+                  value={value || (loadedEquipment?.photo ? `${loadedEquipment.photo}` : null)}
                   error={error?.message}
                   center
                 />

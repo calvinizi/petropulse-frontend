@@ -52,7 +52,7 @@ const Profile = () => {
       });
       
       if (currentUser.avatar && !avatarFile) {
-        setAvatarPreview(`${process.env.REACT_APP_ASSET_URL}/${currentUser.avatar}`);
+        setAvatarPreview(`${currentUser.avatar}`);
       }
     }
   }, [currentUser, reset, avatarFile]);

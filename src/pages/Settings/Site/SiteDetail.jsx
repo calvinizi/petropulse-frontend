@@ -148,7 +148,7 @@ const SiteDetail = () => {
                   <div key={eq.id} className="asset-row" onClick={() => navigate(`/equipment/${eq.id}`)}>
                     <div className="asset-icon">
                       <img 
-                        src={`${process.env.REACT_APP_ASSET_URL}/${eq.photo}`} 
+                        src={`${eq.photo}`} 
                         alt={<Box size={20} />} 
                         style={{
                           objectFit:"cover",

@@ -267,7 +267,7 @@ const WorkOrderDetail = () => {
                   <span className="rep-label">Proof of Work</span>
                   <div className="img-preview-box">
                     <img
-                      src={`${process.env.REACT_APP_ASSET_URL}/${workOrder.photo}`}
+                      src={`${workOrder.photo}`}
                       alt="Completion Proof"
                     />
                   </div>
