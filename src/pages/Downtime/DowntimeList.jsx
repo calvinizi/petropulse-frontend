@@ -366,7 +366,7 @@ const DowntimeList = () => {
                 <label className="modal-label">Cost Impact</label>
                 <div className="cost-display">
                     <span className="currency">N</span>
-                    <span className="amount">{selectedEq ? selectedEq.downtimeCostPerHour : 0}</span>
+                    <span className="amount">{selectedEq ? selectedEq.downtimeCostPerHour.toLocaleString('en-US') : 0}</span>
                     <span className="unit">/ Hour</span>
                 </div>
             </div>

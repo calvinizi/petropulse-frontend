@@ -433,7 +433,7 @@ const EquipmentDetail = () => {
               <div className="stat-card">
                 <span className="stat-label">Downtime Cost</span>
                 <div className="stat-value text-amber-600">
-                  NGN {equipment.downtimeCostPerHour}/hr
+                  NGN {equipment.downtimeCostPerHour.toLocaleString('en-US')}/hr
                 </div>
               </div>
             </div>
